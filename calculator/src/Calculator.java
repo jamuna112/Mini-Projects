@@ -30,24 +30,19 @@ public class Calculator {
 
             switch (choice) {
                 case 1:
-                    result = num1 + num2;
+                    result = add(num1, num2);
                     System.out.println("Performing addition: " + result);
                     break;
                 case 2:
-                    result = num1 - num2;
+                    result = sub(num1, num2);
                     System.out.println("Performing subtraction: " + result);
                     break;
                 case 3:
-                    result = num1 * num2;
+                    result = mul(num1, num2);
                     System.out.println("Performing multiplication: " + result);
                     break;
                 case 4:
-                    if (num2 != 0) {
-                        result = num1 / num2;
-                        System.out.println("Performing division: " + result);
-                    } else {
-                        System.out.println("invalid divide operation");
-                    }
+                        result = div(num1, num2);
                     break;
                 default:
                     System.out.println("Cannot perform operation..");
@@ -60,15 +55,28 @@ public class Calculator {
     }
 
 
-//    public double add(double a, double b) {
-//    return a+b;
-//    }
-//
-//    public double sub(double a, double b) {
-//        return a-b;
-//    }
-//
-//    public double mul(double a, double b) {
-//        return a*b;
-//    }
+    public double add(double a, double b) {
+    return a+b;
+    }
+
+    public double sub(double a, double b) {
+        return a-b;
+    }
+
+    public double mul(double a, double b) {
+        return a*b;
+    }
+
+    public double div(double a, double b) {
+        double result = 0;
+        if(b != 0){
+            result = a/b;
+            System.out.println("Performing division: " + result);
+        } else {
+            System.out.println("Invalid operation..");
+        }
+
+    return result;
+    }
+
 }
